@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            overflow: hidden;
+            min-height: 80vh;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: snow;
+        }
+
+        button {
+            border: 2px solid black;
+            width: 7rem;
+            height: 3rem;
+            border-radius: 9px;
+            margin: 2px 5px;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+            background: transparent;
+        }
+
+        button:hover {
+
+            background-color: snow;
+
+        }
+
+        #no{
+            position: absolute;
+            z-index: 100;
+        }
+
+
+        #title {
+
+            font-size: 5rem;
+            
+        }
+        #buttonDiv{
+            width: 12%;
+            /* border: 2px solid red; */
+            
+        }
+        
+        @media only screen and (max-width: 600px) {
+            #title {
+                font-size: 5vh;
+            }
+
+            #buttonDiv{
+                width: 68%;
+
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <p id="title">Are you simp?</p>
+    
+    <div id="buttonDiv">
+        <button onclick="yesButton()" id="yes">Yes</button>
+        <button onmouseover="moveNObutton()" id="no">No</button>
+    </div>
+</body>
+<script>
+
+function moveNObutton(){
+    let No = document.getElementById("no")
+
+    let width =  Math.floor(Math.random() * (screen.width - 150));
+    let height = Math.floor(Math.random() * (screen.height - 150));
+
+    // if (width < 150){
+    //     width = 150
+    // }
+
+    // else if(height < 150){
+    //     height = 150
+
+    // }
+    No.style.left = width + "px"
+    No.style.top = height + "px"
+
+    console.log(width,height)
+
+
+}
+
+function yesButton(){
+
+    let yes = document.getElementById('title')
+    let No = document.getElementById("no")
+    let buttonDiv = document.getElementById('buttonDiv')
+
+    yes.innerHTML = "I kenw it..."
+    // No.style.display = 'None'
+    buttonDiv.style.width = "30%"
+    buttonDiv.style.display = 'None'
+   
+
+
+}
+
+
+</script>
+</html>
